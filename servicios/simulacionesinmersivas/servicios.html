@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="stylesheet" href="../../responsive-side-navigation-bar-in-html-css-javascript/responsive-side-navigation-bar-in-html-css-javascript/style.css" />
+<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+
+body {
+  font-family: "Karma", sans-serif;
+  background-image: url('https://cdn.pixabay.com/photo/2023/10/10/14/27/night-view-8306605_960_720.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Estilos para el botón */
+.btn-draw-border {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.2rem 'Roboto Slab', sans-serif;
+  padding: 1em 2em;
+  letter-spacing: 0.05rem;
+  color: #58afd1;
+  position: relative;
+}
+
+.btn-draw-border::before,
+.btn-draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.btn-draw-border::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+
+.btn-draw-border::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+
+.btn-draw-border:hover {
+  color: #ffe593;
+}
+
+.btn-draw-border:hover::before,
+.btn-draw-border:hover::after {
+  border-color: #ffe593;
+  width: 100%;
+  height: 100%;
+}
+
+/* Estilos para el texto en negrita */
+.w3-quarter h3, .w3-quarter p {
+  
+  color: #ffffff;
+}
+</style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class="bx bxl-c-plus-plus icon"></i>
+      <div class="logo_name">SimuEnglish</div>
+      <i class="bx bx-menu" id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <i class="bx bx-search"></i>
+        <input type="text" placeholder="Search..." />
+        <span class="tooltip">Search</span>
+      </li>
+      <li id="dashboard">
+        <a href="#">
+          <i class="bx bx-grid-alt"></i>
+          <span class="links_name">simulacionesinmersivas</span>
+        </a>
+        <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-user"></i>
+          <span class="links_name">User</span>
+        </a>
+        <span class="tooltip">User</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-chat"></i>
+          <span class="links_name">Messages</span>
+        </a>
+        <span class="tooltip">Messages</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-pie-chart-alt-2"></i>
+          <span class="links_name">Analytics</span>
+        </a>
+        <span class="tooltip">Analytics</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-folder"></i>
+          <span class="links_name">File Manager</span>
+        </a>
+        <span class="tooltip">Files</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-cart-alt"></i>
+          <span class="links_name">Order</span>
+        </a>
+        <span class="tooltip">Order</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-heart"></i>
+          <span class="links_name">Saved</span>
+        </a>
+        <span class="tooltip">Saved</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-cog"></i>
+          <span class="links_name">Setting</span>
+        </a>
+        <span class="tooltip">Setting</span>
+      </li>
+      <li class="profile">
+        <div class="profile-details">
+          <img src="profile.jpg" alt="profileImg" />
+          <div class="name_job">
+            <div class="name">SimuEnglish</div>
+            <div class="job">Web designer</div>
+          </div>
+        </div>
+        <i class="bx bx-log-out" id="log_out"></i>
+      </li>
+    </ul>
+  </div>
+  <section class="home-section">
+
+<!-- Sidebar (hidden by default) -->
+
+
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-black w3-xlarge" style="max-width:1200px;margin:auto">
+    
+    <div class="w3-center w3-padding-16">Simulaciones Inmersivas</div>
+  </div>
+</div>
+  
+
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter w3-dark-translucent-bg">
+      <img src="https://profesorparticulardematematica.com/wp-content/uploads/Profesor-Particular-de-Matematicas-en-Moquegua.jpg" alt="Sandwich" style="width:100%">
+      
+      <h3>Conversando con un profesor de Matematica</h3>
+      <p>Hola aqui podras realizar conversaciones que te permitan aprender Matematicas y Ala ves mejorar el Ingles</p>
+
+        <button class="btn-draw-border" onclick="redirectToChat()">Ir al Chat</button>
+    </div>
+    <div class="w3-quarter">
+        <img src="https://neoauto.com/noticias/wp-content/uploads/2017/03/Autos-deportivos-los-4-modelos-m%C3%A1s-so%C3%B1ados-NeoAuto.com_.jpg" alt="Sandwich" style="width:100%">
+        <h3>Simulaciones Inmersivas</h3>
+        <p>Hola aqui podras realizar conversaciones orientadas a diferentes ambientes sociales "Escenarios realistas que recrean situaciones
+          cotidianas para un aprendizaje práctico"</p>
+  
+          <button class="btn-draw-border" onclick="redirectToChat1()">Ir al Chat</button>
+      </div>
+      <div class="w3-quarter">
+        <img src="https://www.ispring.es/blog/wp-content/uploads/editor/2021/08/ispring-blog-image-1630059952.png" alt="Sandwich" style="width:100%">
+        <h3>Simulaciones Inmersivas</h3>
+        <p>Hola aqui podras realizar conversaciones orientadas a diferentes ambientes sociales "Escenarios realistas que recrean situaciones
+          cotidianas para un aprendizaje práctico"</p>
+  
+          <button class="btn-draw-border" onclick="redirectToChat()">Ir al Chat</button>
+      </div>
+    <div class="w3-quarter">
+      <img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/512px/1f512.png" alt="Pasta and Wine" style="width:100%">
+      <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/512px/1f512.png" alt="Popsicle" style="width:100%">
+      <h3>All I Need Is a Popsicle</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/512px/1f512.png" alt="Salmon" style="width:100%">
+      <h3>Salmon For Your Skin</h3>
+      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/512px/1f512.png" alt="Sandwich" style="width:100%">
+      <h3>The Perfect Sandwich, A Real Classic</h3>
+      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/512px/1f512.png" alt="Croissant" style="width:100%">
+      <h3>Le French</h3>
+      <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+  
+  <hr id="about">
+
+  
+
+<!-- End page content -->
+</div>
+</section>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+function redirectToChat() {
+  // Cambia la URL por la que desees redirigir
+  window.location.href = "https://my.artibot.ai/qmdnaxdc";
+}
+function redirectToChat1() {
+  // Cambia la URL por la que desees redirigir
+  window.location.href = "https://my.artibot.ai/fwwmwxgs";
+}
+</script>
+<script src="../../responsive-side-navigation-bar-in-html-css-javascript/responsive-side-navigation-bar-in-html-css-javascript/script.js"></script>
+</body>
+</html>

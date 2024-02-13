@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medallas de Usuario - SimuEnglish</title>
+    <style>
+        /* Estilos CSS para el cuerpo de la página */
+        body {
+            background-image: url('https://img.freepik.com/fotos-premium/objeto-trofeos-oro-fondo_488220-27255.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            opacity: 0.9; /* Reducir la opacidad del fondo */
+        }
+
+        /* Estilos CSS para las medallas */
+        .medalla {
+            display: inline-block;
+            width: 150px;
+            text-align: center;
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer; /* Cambia el cursor a mano al pasar sobre la medalla */
+        }
+        .medalla img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .medalla .nombre {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #333; /* Cambiar el color del texto para mejor contraste */
+        }
+
+        /* Estilos CSS para el lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+        }
+        .lightbox img {
+            display: block;
+            margin: 50px auto;
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        /* Estilos CSS para el botón de regresar */
+        .regresar {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 24px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background-color: #FFA12B;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 2px solid #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s;
+        }
+        .regresar:hover {
+            background-color: #F78900;
+        }
+    </style>
+</head>
+<body>
+    <h1>Medallas de Alex - SimuEnglish</h1>
+    <div id="medallas">
+        <!-- Ejemplo de una medalla obtenida -->
+        <div class="medalla" onclick="openLightbox('https://img.freepik.com/vector-gratis/medalla-premio-cinta-roja_1284-42828.jpg')">
+            <img src="https://img.freepik.com/vector-gratis/medalla-premio-cinta-roja_1284-42828.jpg" alt="Medalla 1">
+            <div class="nombre">Medalla de Oro</div>
+        </div>
+        <!-- Ejemplo de una medalla no obtenida -->
+        <div class="medalla" onclick="openLightbox('https://merkur.pe/wp-content/uploads/2022/05/MEDALLA-COPA-CHICA.jpg')">
+            <img src="https://merkur.pe/wp-content/uploads/2022/05/MEDALLA-COPA-CHICA.jpg" alt="Medalla 2">
+            <div class="nombre">Medalla de Plata</div>
+        </div>
+        <div class="medalla" onclick="openLightbox('https://png.pngtree.com/png-clipart/20230522/original/pngtree-clear-gold-medal-png-image_9167447.png')">
+            <img src="https://png.pngtree.com/png-clipart/20230522/original/pngtree-clear-gold-medal-png-image_9167447.png" alt="Medalla 3">
+            <div class="nombre">Medalla de Bronce</div>
+        </div>
+        <div class="medalla" onclick="openLightbox('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6gW9OBxqx1y8X_-dkKJ5zd1nDX7R_Z1Ywnw&usqp=CAU')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6gW9OBxqx1y8X_-dkKJ5zd1nDX7R_Z1Ywnw&usqp=CAU" alt="Medalla 4">
+            <div class="nombre">Medalla de Experto</div>
+        </div>
+        <div class="medalla" onclick="openLightbox('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgjmHA4cjHEGuNoITKf3TXYpt9Nwz5ENF0cA&usqp=CAU')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgjmHA4cjHEGuNoITKf3TXYpt9Nwz5ENF0cA&usqp=CAU" alt="Medalla 5">
+            <div class="nombre">Medalla de Nivel Medio</div>
+        </div>
+        <div class="medalla" onclick="openLightbox('https://png.pngtree.com/png-clipart/20190520/original/pngtree-medal-honor-gold-png-image_4293887.jpg')">
+            <img src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-medal-honor-gold-png-image_4293887.jpg" alt="Medalla 6">
+            <div class="nombre">Medalla de Aprendiz</div>
+        </div>
+        <!-- Agrega más medallas aquí según lo necesites -->
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Medalla">
+    </div>
+
+    <!-- Botón de regresar -->
+    <div ontouchstart="">
+        <div class="button">
+            <a href="#" class="regresar" onclick="history.back()">Regresar</a>
+        </div>
+    </div>
+
+    <script>
+        // Función para abrir el lightbox y mostrar la imagen de la medalla
+        function openLightbox(imgSrc) {
+            var lightbox = document.querySelector('.lightbox');
+            var lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imgSrc;
+            lightbox.style.display = 'block';
+        }
+
+        // Función para cerrar el lightbox
+        function closeLightbox() {
+            var lightbox = document.querySelector('.lightbox');
+            lightbox.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

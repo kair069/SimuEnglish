@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progresión Gradual de Usuarios - SimuEnglish</title>
+    <style>
+/* Estilos generales */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilos para la barra de progreso */
+
+.progress {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: #FFA12B;
+    height: 30px;
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Estilos para el texto de progreso */
+
+.progress-text {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Estilos para la sección de notificación */
+
+.notification {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notification h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.notification p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Estilos para la sección de calificación de examen */
+
+.exam-section {
+    margin-top: 20px;
+}
+
+.exam-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #FFA12B;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.exam-section button:hover {
+    background-color: #FF8200;
+}
+
+/* Estilos para imágenes */
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.image-container img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos para párrafos alineados */
+p {
+    text-align: justify;
+}
+
+/* Estilos adicionales para mejorar el diseño */
+
+button,
+a {
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+a:hover {
+    background-color: #FF8200;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .progress {
+        max-width: 90%;
+    }
+
+    .image-container img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <h1>Progresión Gradual de Usuarios - SimuEnglish</h1>
+    <!-- Barra de progresión -->
+    <div class="progress">
+        <div class="progress-bar" style="width: 60%;"></div>
+        <!-- Cambia el valor de 'width' según el progreso del usuario -->
+    </div>
+    <!-- Texto de progreso -->
+    <div class="progress-text">Progreso: 60%</div> <!-- Cambia el valor del texto según el progreso del usuario -->
+
+    <!-- Sección de notificación de SimuEnglish -->
+    <div class="notification">
+        <h2>Notificaciones de SimuEnglish</h2>
+        <p>Bienvenido a SimuEnglish, una plataforma web que simula conversaciones inmersivas en escenarios reales.
+            Mejora tus habilidades de comunicación en inglés de manera divertida y efectiva.</p>
+    </div>
+
+    <!-- Sección de calificación de examen -->
+    <div class="exam-section">
+        <h2>Calificación de Examen</h2>
+        <p>¡Prueba tus conocimientos con nuestro examen y obtén una calificación!</p>
+        <button onclick="calificarExamen()">Calificar Examen</button>
+        <div id="exam-result"></div>
+    </div>
+
+    <!-- Imágenes -->
+    <div class="image-container">
+        <img src="https://impulsapopular.com/wp-content/uploads/2019/04/4420-C%C3%B3mo-incrementar-las-ventas-con-notificaciones-%E2%80%9Cpush%E2%80%9D.jpg"
+            alt="Imagen 1">
+        <img src="https://lamanzanamordida.net/app/uploads-lamanzanamordida.net/2023/03/como-activar-notificaciones-push-iphone.jpg"
+            alt="Imagen 2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSySMfOuo5_PL-wStLuHWfd_Uv9XFMHe5C4nw&usqp=CAU"
+            alt="Imagen 3">
+    </div>
+
+    <script>
+        function calificarExamen() {
+            var calificacion = Math.floor(Math.random() * 101); // Genera una calificación aleatoria entre 0 y 100
+            var examResult = document.getElementById('exam-result');
+
+            if (calificacion >= 60) {
+                examResult.innerHTML = '¡Felicidades! Has aprobado el examen con una calificación de ' + calificacion + '.';
+                examResult.style.color = 'green';
+            } else {
+                examResult.innerHTML = 'Lo siento, has reprobado el examen con una calificación de ' + calificacion + '. Por favor, inténtalo de nuevo.';
+                examResult.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+
+</html>

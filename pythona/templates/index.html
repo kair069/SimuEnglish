@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Practice</title>
+</head>
+<body>
+    <h1>Speech Practice</h1>
+    <button id="start-button">Iniciar Conversación</button>
+
+    <script>
+        const startButton = document.getElementById('start-button');
+
+        startButton.addEventListener('click', () => {
+            const recognition = new window.webkitSpeechRecognition();
+            recognition.lang = 'en-US'; // Establece el idioma del reconocimiento de voz
+
+            recognition.onstart = () => {
+                console.log('El reconocimiento de voz ha comenzado.');
+            };
+
+            recognition.onresult = (event) => {
+                const speechResult = event.results[0][0].transcript.toLowerCase();
+                console.log('Result:', speechResult);
+
+                // Aquí puedes enviar speechResult al servidor si lo necesitas
+
+                // Simplemente para demostrar, responde con el mismo texto
+                speak(speechResult);
+            };
+
+            recognition.onerror = (event) => {
+                console.error('Error en el reconocimiento de voz:', event.error);
+            };
+
+            // Solicitar permiso para acceder al micrófono
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(() => {
+                    console.log('Permiso para acceder al micrófono concedido.');
+                    recognition.start();
+                })
+                .catch((error) => {
+                    console.error('Error al acceder al micrófono:', error);
+                });
+        });
+
+        // Función para que la plataforma web hable
+        function speak(text) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US'; // Establece el idioma del habla
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>

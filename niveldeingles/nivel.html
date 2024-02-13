@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estado de Nivel de Inglés</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body {
+        background-image: url('https://cdn.pixabay.com/photo/2017/08/02/14/26/winter-landscape-2571788_1280.jpg');
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Para asegurarse de que el contenido esté centrado verticalmente */
+      }
+      
+      .container {
+        max-width: 600px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+        text-align: center;
+      }
+      
+      h2 {
+        color: #007bff;
+      }
+      
+      .status {
+        font-size: 24px;
+        margin-top: 20px;
+      }
+      
+      .principiante-img {
+        max-width: 100%;
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+      }
+      
+      .btn-container {
+        margin-top: 20px;
+      }
+      
+      .btn-container button {
+        margin: 0 10px; /* Espacio entre botones */
+        padding: 10px 20px; /* Tamaño del botón */
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+      .btn-container button:hover {
+        background-color: #007bff;
+        color: #fff; /* Cambio de color al pasar el mouse */
+      }
+      
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2 class="text-center">Estado de Nivel de Inglés</h2>
+  <hr>
+  <div class="status text-center">
+    <p>Tu nivel actual de inglés es:</p>
+    <p><strong>Principiante</strong></p>
+  </div>
+  <img src="https://img.freepik.com/vector-premium/empresario-principiante-pregunta_81698-324.jpg" class="principiante-img" alt="Principiante">
+  <div class="btn-container">
+    <button class="btn btn-primary" id="regreso">Regresar</button>
+    <button class="btn btn-success">Mejorar Inglés</button>
+  </div>
+</div>
+
+<script>
+
+  document.getElementById("regreso").addEventListener("click", function() {
+    // Redirigir a otra página
+    window.location.href = "../servicios/servicios.html";
+});
+</script>
+
+</body>
+</html>

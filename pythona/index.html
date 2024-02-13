@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video de fondo con video centrado y botones</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    #video-background, #responsive-video-background {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1000;
+        background-size: cover;
+    }
+    #video-background {
+        z-index: -1001; /* Asegurar que este video se muestre detrás del otro */
+    }
+    #overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%; /* Reducir la altura a la mitad para centrarlo en la parte superior */
+        background-color: rgba(0, 0, 0, 0.5); /* Opacidad del overlay */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #overlay1 {
+        position: absolute;
+        bottom: 0; /* Colocar en la parte inferior */
+        left: 0;
+        width: 100%;
+        height: 50%; /* Reducir la altura a la mitad para centrarlo en la parte inferior */
+        background-color: rgba(0, 0, 0, 0.5); /* Opacidad del overlay */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #content {
+        position: relative;
+        z-index: 1;
+        color: #fff;
+        text-align: center;
+    }
+    #logo-video {
+        display: none; /* Inicialmente oculto */
+        max-width: 200px; /* Ajusta el tamaño del video */
+        max-height: 200px; /* Ajusta el tamaño del video */
+    }
+    #botones {
+        margin-top: auto; /* Los botones se colocan en la parte inferior */
+    }
+
+    /* Media query para mostrar el video de logo solo en modo responsive */
+    @media (max-width: 768px) {
+        #video-background {
+            display: none; /* Ocultar el video de fondo en modo responsive */
+        }
+        #responsive-video-background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #overlay {
+            align-items: center; /* Centrar el contenido verticalmente */
+            justify-content: center; /* Centrar el contenido horizontalmente */
+            height: 30%; /* Ajustar la altura para ocupar toda la pantalla */
+        }
+        #logo-video {
+            display: block; /* Mostrar el video de logo en modo responsive */
+        }
+    }
+    @media (min-width: 769px) {
+        #responsive-video-background {
+            display: none; /* Ocultar el video de fondo responsive en modo no responsive */
+        }
+    }
+
+
+
+
+    .wrapper {
+        position: absolute;
+        top: calc(50% + 40px); /* Ajusta la posición vertical para el primer botón */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: fit-content;
+        height: auto;
+    }
+    
+    .wrapper1 {
+        position: absolute;
+        top: calc(50% - 40px); /* Ajusta la posición vertical para el segundo botón */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: fit-content;
+        height: auto;
+    }
+    button{
+        width:200px;
+        height:70px;
+        background: linear-gradient(to left top, #c32c71 50%, #b33771 50%);
+        border-style: none;
+        color:#fff;
+        font-size: 23px;
+        letter-spacing: 3px;
+        font-family: 'Lato';
+        font-weight: 600;
+        outline: none;
+        cursor: pointer;
+        position: relative;
+        padding: 0px;
+        overflow: hidden;
+        transition: all .5s;
+        box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+    }
+    button span{
+        position: absolute;
+        display: block;
+    }
+    button span:nth-child(1){
+        height: 3px;
+        width:200px;
+        top:0px;
+        left:-200px;
+        background: linear-gradient(to right, rgba(0,0,0,0), #f6e58d);
+        border-top-right-radius: 1px;
+        border-bottom-right-radius: 1px;
+        animation: span1 2s linear infinite;
+        animation-delay: 1s;
+    }
+    
+    @keyframes span1{
+        0%{
+            left:-200px
+        }
+        100%{
+            left:200px;
+        }
+    }
+    button span:nth-child(2){
+        height: 70px;
+        width: 3px;
+        top:-70px;
+        right:0px;
+        background: linear-gradient(to bottom, rgba(0,0,0,0), #f6e58d);
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+        animation: span2 2s linear infinite;
+        animation-delay: 2s;
+    }
+    @keyframes span2{
+        0%{
+            top:-70px;
+        }
+        100%{
+            top:70px;
+        }
+    }
+    button span:nth-child(3){
+        height:3px;
+        width:200px;
+        right:-200px;
+        bottom: 0px;
+        background: linear-gradient(to left, rgba(0,0,0,0), #f6e58d);
+        border-top-left-radius: 1px;
+        border-bottom-left-radius: 1px;
+        animation: span3 2s linear infinite;
+        animation-delay: 3s;
+    }
+    @keyframes span3{
+        0%{
+            right:-200px;
+        }
+        100%{
+            right: 200px;
+        }
+    }
+    
+    button span:nth-child(4){
+        height:70px;
+        width:3px;
+        bottom:-70px;
+        left:0px;
+        background: linear-gradient(to top, rgba(0,0,0,0), #f6e58d);
+        border-top-right-radius: 1px;
+        border-top-left-radius: 1px;
+        animation: span4 2s linear infinite;
+        animation-delay: 4s;
+    }
+    @keyframes span4{
+        0%{
+            bottom: -70px;
+        }
+        100%{
+            bottom:70px;
+        }
+    }
+    
+    button:hover{
+        transition: all .5s;
+        transform: rotate(-3deg) scale(1.1);
+        box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+    }
+    button:hover span{
+        animation-play-state: paused;
+    }
+</style>
+</head>
+<body>
+<!-- Video de fondo para pantallas no responsivas -->
+<video autoplay loop muted playsinline id="video-background">
+    <source src="../videos/Colorful Futuristic Neon Gaming Channel Youtube Outro.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+</video>
+
+<!-- Video de fondo para modo responsive -->
+<video autoplay loop muted playsinline id="responsive-video-background">
+    <source src="
+    ../videos/Black and Blue Modern Coming Soon Mobile Video.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+</video>
+
+<div id="overlay">
+    <div id="content">
+        <video id="logo-video" autoplay loop muted playsinline>
+            <source src="../videos/Borcelle.mp4" type="video/mp4">
+            
+        </video>
+        <br>
+    </div>
+</div>       
+<div id="overlay1">
+        <div class="mt-3">
+            <div class="wrapper">
+                <button>
+                  Inicio! 
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+              <br>
+              <div class="wrapper1">
+                <button>
+                  Registro! 
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+        </div>
+</div>       
+    
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

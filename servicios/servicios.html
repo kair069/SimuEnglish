@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="stylesheet" href="../responsive-side-navigation-bar-in-html-css-javascript/responsive-side-navigation-bar-in-html-css-javascript/style.css" />
+<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.button-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.button-container button:hover {
+  background-color: #45a049;
+}
+.w3-quarter {
+  margin-bottom: 20px; /* Ajusta este valor según sea necesario */
+  background-image: url('ruta/a/tu/imagen.jpg'); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  padding: 20px; /* Añade un relleno para separar el contenido del borde */
+}
+body {
+  background-image: url('https://cdn.pixabay.com/photo/2017/01/14/12/59/iceland-1979445_1280.jpg'); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+}
+</style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class="bx bxl-c-plus-plus icon"></i>
+      <div class="logo_name">SimuEnglish</div>
+      <i class="bx bx-menu" id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <i class="bx bx-search"></i>
+        <input type="text" placeholder="Search..." />
+        <span class="tooltip">Search</span>
+      </li>
+      <li id="dashboard">
+        <a href="#">
+          <i class="bx bx-grid-alt"></i>
+          <span class="links_name">simulacionesinmersivas</span>
+        </a>
+        <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-user"></i>
+          <span class="links_name">User</span>
+        </a>
+        <span class="tooltip">User</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-chat"></i>
+          <span class="links_name">Messages</span>
+        </a>
+        <span class="tooltip">Messages</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-pie-chart-alt-2"></i>
+          <span class="links_name">Analytics</span>
+        </a>
+        <span class="tooltip">Analytics</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-folder"></i>
+          <span class="links_name">File Manager</span>
+        </a>
+        <span class="tooltip">Files</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-cart-alt"></i>
+          <span class="links_name">Order</span>
+        </a>
+        <span class="tooltip">Order</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-heart"></i>
+          <span class="links_name">Saved</span>
+        </a>
+        <span class="tooltip">Saved</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-cog"></i>
+          <span class="links_name">Setting</span>
+        </a>
+        <span class="tooltip">Setting</span>
+      </li>
+      <li class="profile">
+        <div class="profile-details">
+          <img src="profile.jpg" alt="profileImg" />
+          <div class="name_job">
+            <div class="name">SimuEnglish</div>
+            <div class="job"></div>
+          </div>
+        </div>
+        <i class="bx bx-log-out" id="log_out"></i>
+      </li>
+    </ul>
+  </div>
+  <section class="home-section">
+<!-- Sidebar (hidden by default) -->
+
+
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+    
+    
+    <div class="w3-center w3-padding-16">Mis Servicios</div>
+  </div>
+</div>
+  
+
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <img src="https://www.ispring.es/blog/wp-content/uploads/editor/2021/08/ispring-blog-image-1630059952.png" alt="Sandwich" style="width:100%">
+      <h3>Simulaciones Inmersivas</h3>
+      <p>Hola aquí podrás realizar conversaciones orientadas a diferentes ambientes sociales "Escenarios realistas que recrean situaciones
+        cotidianas para un aprendizaje práctico"</p>
+
+      <div class="button-container">
+        <button onclick="redirectToChat()">Ingresar</button>
+      </div>
+    </div>
+    <div class="w3-quarter">
+        <img src="https://www.esic.edu/sites/default/files/styles/full/public/rethink/580280b3-atencion-al-cliente-y-servicio-al-cliente.jpg?itok=REGLgDj2" alt="Sandwich" style="width:100%">
+        <h3>Asesorías</h3>
+        <p>Hola aquí podrás realizar: Asesoría constante para una adquisición exitosa
+          del idioma "</p>
+  
+        <div class="button-container">
+          <button onclick="redirectToChat1()">Ingresar a Asesorías</button>
+        </div>
+      </div>
+      <div class="w3-quarter">
+        <img src="https://www.ispring.es/blog/wp-content/uploads/editor/2021/08/ispring-blog-image-1630059952.png" alt="Sandwich" style="width:100%">
+        <h3>Mi Nivel de Inglés</h3>
+        <p>Hola aquí podrás realizar conversaciones orientadas a diferentes ambientes sociales "Escenarios realistas que recrean situaciones
+          cotidianas para un aprendizaje práctico"</p>
+  
+        <div class="button-container">
+          <button id="botondenivel">Ingresar</button>
+        </div>
+      </div>
+    <div class="w3-quarter">
+      <img src="https://cdn-icons-png.flaticon.com/512/2753/2753089.png" alt="Pasta and Wine" style="width:100%">
+      <h3>Replay y conversaciones</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <div class="button-container">
+        <button id="botondehistorial">Ingresar</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="https://w7.pngwing.com/pngs/974/992/png-transparent-sequence-element-geometric-progression-euclidean-ppt-sequence-text-digital-business-thumbnail.png" alt="Popsicle" style="width:100%">
+      <h3>Progresión Gradual</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <div class="button-container">
+        <button id="progresion">Ingresar</button>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://img.freepik.com/vector-premium/conjunto-iconos-medallas-oro-plata-bronce-o-primer-segundo-tercer-lugar-o-icono-medallas-premio_399089-268.jpg" alt="Salmon" style="width:100%">
+      <h3>Medallas</h3>
+      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <div class="button-container">
+        <button id="medalla">Ingresar</button>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://w7.pngwing.com/pngs/1018/171/png-transparent-dance-party-spotlight-computer-icons-stage-dance-icon.png" alt="Sandwich" style="width:100%">
+      <h3>Diccionario de Conjugacion de Verbos</h3>
+      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <div class="button-container">
+        <button id="diccionario">Ingresar</button>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://images.vexels.com/media/users/3/137047/isolated/preview/5831a17a290077c646a48c4db78a81bb-icono-de-perfil-de-usuario-azul.png" alt="Croissant" style="width:100%">
+      <h3>Mi perfil</h3>
+      <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <div class="button-container">
+        <button id="botondeperfil">Ingresar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+    </div>
+  </div>
+  
+  <hr id="about">
+
+ 
+  
+ 
+
+   
+
+<!-- End page content -->
+</div>
+  </section>
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+
+    function redirectToChat() {
+      // Cambia la URL por la que desees redirigir
+      window.location.href = "../servicios/simulacionesinmersivas/servicios.html";
+    }
+
+
+    function redirectToChat1() {
+      // Cambia la URL por la que desees redirigir
+      window.location.href = "https://bot.airdroid.com/s/jylL9WWZfwmuN1IfLA2hBg";
+    }
+    <!-- https://biz.airdroid.com/#/chatinsight/bot -->
+  
+
+    document.getElementById("botondenivel").addEventListener("click", function() {
+      // Redirigir a otra página
+      window.location.href = "../niveldeingles/nivel.html";
+  });
+
+  document.getElementById("botondeperfil").addEventListener("click", function() {
+    // Redirigir a otra página
+    window.location.href = "../perfil/perfil.html";
+});
+
+document.getElementById("botondehistorial").addEventListener("click", function() {
+  // Redirigir a otra página
+  window.location.href = "../replay/replay.html";
+});
+
+document.getElementById("diccionario").addEventListener("click", function() {
+  // Redirigir a otra página
+  window.location.href = "https://es.bab.la/conjugacion/";
+});
+
+document.getElementById("medalla").addEventListener("click", function() {
+  // Redirigir a otra página
+  window.location.href = "../medalla/medalla.html";
+});
+
+document.getElementById("progresion").addEventListener("click", function() {
+  // Redirigir a otra página
+  window.location.href = "../progresion/progresion.html";
+});
+
+
+
+ // Script JS para redireccionar al hacer clic en los elementos del menú
+ document.getElementById('dashboard').addEventListener('click', function() {
+  window.location.href = '../servicios/simulacionesinmersivas/servicios.html'; // Cambia 'dashboard.html' al URL de tu página de dashboard
+});
+// Agrega listeners para los demás elementos del menú de la misma manera
+</script>
+<script src="../responsive-side-navigation-bar-in-html-css-javascript/responsive-side-navigation-bar-in-html-css-javascript/script.js"></script>
+</body>
+</html>
